@@ -1,9 +1,13 @@
 
 
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
-const User = require('../models/user.model.js');
-const jwtProvider=require("../config/jwtProvider")
+// const jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken';
+// const bcrypt = require('bcrypt');
+import bcrypt from 'bcrypt';
+// const User = require('../models/user.model.js');
+import User from "../models/user.model.js"
+// const jwtProvider=require("../config/jwtProvider")
+import jwtProvider from "../config/jwtProvider.js";
 
 const createUser = async (userData)=>{
     try {
@@ -92,7 +96,7 @@ const getAllUsers=async()=>{
     }
 }
 
-module.exports={
+export default{
     createUser,
     findUserById,
     getUserProfileByToken,

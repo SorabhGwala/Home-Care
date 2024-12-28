@@ -1,15 +1,13 @@
-const Cart = require("../models/cart.model");
+import Cart from "../models/cart.model.js";
 
-async function createCart(user){
-
-
+async function createCart(user) {
     try {
-        const cart= new Cartt({user});
-        const creatCart=await cart.save()
-        return creatCart;
-        
+        const cart = new Cart({ user });
+        const createdCart = await cart.save();
+        return createdCart;
     } catch (error) {
-     throw new Error(error.message)   
+        throw new Error(error.message);
     }
 }
-module.exports={createCart};
+
+export default createCart;
